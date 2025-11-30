@@ -1,11 +1,11 @@
 'use client';
 
-import { HTMLAttributes, ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
 export type CardVariant = 'elevated' | 'outlined' | 'glass';
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   variant?: CardVariant;
   hoverable?: boolean;
   children: ReactNode;
